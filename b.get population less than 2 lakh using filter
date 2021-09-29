@@ -1,0 +1,21 @@
+const getBlog=()=>{
+    const xhr=new XMLHttpRequest();
+    xhr.open("GET","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+    xhr.responseType="json";
+    xhr.onload=()=>{
+         arr=xhr.response;
+       let x=arr.filter((arr1)=>
+        {
+            if(arr1.population<=200000)
+            {
+                return arr1.name;
+            }
+        })
+
+        console.log(x);
+        
+           
+    }
+    xhr.send();
+    }
+    getBlog();
