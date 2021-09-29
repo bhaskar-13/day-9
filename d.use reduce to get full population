@@ -1,0 +1,15 @@
+
+const getBlog=()=>{
+const xhr=new XMLHttpRequest();
+xhr.open("GET","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+xhr.responseType="json";
+xhr.onload=()=>{
+    arr=xhr.response;
+    let x=arr.reduce((sum,curr1)=>sum+curr1.population,0);
+    console.log(x);
+
+}
+
+xhr.send();
+}
+getBlog();
